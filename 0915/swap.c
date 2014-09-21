@@ -13,6 +13,7 @@ swap(int *left, int *right){
     int temp = *left;
     *left = *right;
     *right = temp;
+   // printf("hello\n");
 }
 
 int main(int argc, const char *argv[])

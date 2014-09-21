@@ -14,11 +14,19 @@
 #include <fcntl.h>
 #include <sys/wait.h>
 #include <errno.h>
+/*
+ *1. -1代表出错
+ *2. 0代表fd结束
+ *3. size读满字节
+ *4. 0 < ret < size 中遇到EOF
+ * readn提供了一种保证
+ */
 ssize_t readn(int rfd,void* buf,size_t size){
     ssize_t nleft = size;
     ssize_t nread = 0;
     while(nleft > 0){
-        if((nread = read(rfd,buf,sizeof(buf))) == -1){
+        //if((nread = read(rfd,buf,sizeof(buf))) == -1){
+        if((nread = read(rfd,buf,nleft)) == -1){
             perror("read");
             close(rfd);
             exit(EXIT_FAILURE);
@@ -34,8 +42,10 @@ ssize_t readn(int rfd,void* buf,size_t size){
 ssize_t writen(int rfd,void* buf,size_t size){
     ssize_t nleft = size;
     ssize_t nwrite = 0;
+    printf("sizeof(buf) = %d\n",sizeof(buf));
     while(nleft >  0){
-        if((nwrite = write(rfd,buf,sizeof(buf))) == -1){
+        //if((nwrite = write(rfd,buf,sizeof(buf))) == -1){//这里不错，但就没有达到一次写完的效果了，每次指定的rfd里边写入sizeof（buf这么大的数据）
+        if((nwrite = write(rfd,buf,nleft)) == -1){//这里达到了效果
             perror("write");
             close(rfd);
             exit(1);
