@@ -23,14 +23,24 @@ int main(int argc, const char *argv[])
     date2.calDayOfYear();
 
     cout << endl ; 
-    Date date3(2014,9,22);
+    Date date3(2012,9,19);
     date3.printDate();
     date3.printEn();
     date3.calDayOfYear();
 
     cout << endl ; 
+    Date date4(2012,9,17);
+    date4.printDate();
+    date4.printEn();
+    date4.calDayOfYear();
+
+    cout << endl ; 
     Date::today();    
     Date::diffDate(date2, date1);
+    Date::diffDate(date1, date2);
     Date::diffDate(date2, date3);
+    Date::diffDate(date3, date2);
+    Date::diffDate(date3, date4);
+    Date::diffDate(date4, date3);
     return 0;
 }

@@ -17,8 +17,8 @@ class Person{
         ~Person();
 
         int aliveDays();
-        bool brith_is_over();
-        void print_brith();
+        bool brithIsOver();
+        void printBrith();
 
     private:
         string name_;

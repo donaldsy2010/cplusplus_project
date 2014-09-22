@@ -32,7 +32,7 @@ int Person::aliveDays(){
     cout << endl << "已经沉默了" << days << "天了！！！" << endl;
     return days;
 }
-bool Person::brith_is_over(){
+bool Person::brithIsOver(){
     Date Today = Date::today();
    
     bool flag = true;
@@ -53,6 +53,6 @@ bool Person::brith_is_over(){
 
     return flag;
 }
-void Person::print_brith(){
+void Person::printBrith(){
     cout << name_ << "的生日是 " << brith_.getMonth() << "/" << brith_.getDay() << endl;
 }

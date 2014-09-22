@@ -14,21 +14,21 @@ int main(int argc, const char *argv[])
 
     Person person("donald","shenzheng",date);
     person.aliveDays();
-    person.print_brith();
-    person.brith_is_over();
+    person.printBrith();
+    person.brithIsOver();
 
-    Date date2(1991,9,21);
+    Date date2(1991,9,22);
 
     Person absde("absde","chendu",date2);
     absde.aliveDays();
-    absde.print_brith();
-    absde.brith_is_over();
+    absde.printBrith();
+    absde.brithIsOver();
 
     Date date3(1991,9,23);
 
     Person ben("ben","chendu",date3);
     ben.aliveDays();
-    ben.print_brith();
-    ben.brith_is_over();
+    ben.printBrith();
+    ben.brithIsOver();
     return 0;
 }
