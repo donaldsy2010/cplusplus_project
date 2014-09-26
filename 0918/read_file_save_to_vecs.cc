@@ -17,22 +17,7 @@ using namespace std;
 
 typedef vector<string>  VEC;
 
-void print_detail(const vector<VEC> &strVV);
-void read_File(const string &arg,vector< VEC > &strVV);
-void add_Words(vector<string> &strV, string &line);
-
-int main(int argc, const char *argv[])
-{
-    //读取文件，存放单词到vec
-    //打印行数
-    if(argc < 2){
-        fprintf(stderr,"Use:%s filename\n",argv[0]);
-        exit(1);
-    }
-
-    vector< vector<string> > strVV;
-    read_File(argv[1],strVV);
-    print_detail(strVV);
+void print_dprint_detail(strVV);
     return 0;
 }
 
